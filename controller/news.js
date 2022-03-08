@@ -16,5 +16,5 @@ exports.get = (req, res) => {
     .then((results) => {
       res.status(200).json({ data: results.data });
     })
-    .catch((err) => res.status(200).json(err));
+    .catch((err) => res.status(200).json(err.response));
 };

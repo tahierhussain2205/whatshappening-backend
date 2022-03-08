@@ -12,7 +12,9 @@ exports.get = (req, res) => {
     url,
   };
 
-  axios(requestOptions).then((results) => {
-    res.status(200).json({ data: results.data });
-  });
+  axios(requestOptions)
+    .then((results) => {
+      res.status(200).json({ data: results.data });
+    })
+    .catch((err) => res.status(200).json(err));
 };
